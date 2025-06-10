@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f0f0f0;
+}
+
+
+
+img{
+    width: 200px;
+    border-radius: 50%;
+    aspect-ratio: 1; /* Se ajusta al mismo valor que el width */
+    object-fit: cover;
+}
+
+.perfil-header {
+  margin-top: 60px; /* Separación desde el tope de la página */
+  gap: 1rem; /* Espacio entre imagen y texto */
+}
+
+#foto-perfil img {
+  width: 200px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#descripcion h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #f0f0f0;
+}
+
+#descripcion p {
+  font-size: 1.2rem;
+  color: #e5e5e5; /* ajusta al contraste de tu fondo */
+}
+
+
+
+.iconos-redes a {
+  color: #f0f0f0;
+  transition: color 0.3s;
+}
+
+.iconos-redes a:hover {
+  color: #0dcaf0; /* Azul claro al pasar el ratón */
+}
