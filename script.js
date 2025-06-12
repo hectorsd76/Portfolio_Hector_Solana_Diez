@@ -1,29 +1,25 @@
- function updateCircles() {
-    document.querySelectorAll('.badge').forEach(badge => {
-      const circle = badge.querySelector('.circle');
-      const nivel = badge.dataset.nivel.toLowerCase();
-
-      let porcentaje = 0;
-      switch (nivel) {
-        case "junior":
-          porcentaje = 33;
-          break;
-        case "intermedio":
-          porcentaje = 66;
-          break;
-        case "experto":
-          porcentaje = 100;
-          break;
-        default:
-          porcentaje = 0;
-      }
-
-      const offset = 100 - porcentaje;
-
-      if (circle) {
-        circle.style.strokeDashoffset = offset;
-      }
-    });
+function getPorcentajeFromNivel(nivel) {
+  switch (nivel.toLowerCase()) {
+    case 'junior': return 33;
+    case 'intermedio': return 66;
+    case 'experto': return 100;
+    default: return 0;
   }
+}
 
-  document.addEventListener('DOMContentLoaded', updateCircles);
+function updateCircles() {
+  const badges = document.querySelectorAll('.badge');
+
+  badges.forEach(badge => {
+    const circle = badge.querySelector('.circle');
+    const nivel = badge.dataset.nivel || '';
+    const porcentaje = getPorcentajeFromNivel(nivel);
+    const offset = 100 - porcentaje;
+
+    if (circle) {
+      circle.style.strokeDashoffset = offset;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', updateCircles);
